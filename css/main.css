@@ -1,0 +1,207 @@
+body {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+#drawflow-canvas {
+  width: 100vw;
+  height: 100vh;
+  background-color: #F2F5F7;
+}
+
+#drawflow-canvas:focus {
+  outline: none;
+}
+
+#plus-icon {
+  position: fixed;
+  right: 16px;
+  top: 16px;
+  width: 60px;
+  height: 60px;
+  color: #fff;
+  background-color: #0084ff;
+  border-radius: 50%;
+  text-align: center;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  box-shadow: 0 12px 24px 0px rgb(132 146 166 / 16%);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+#plus-icon span {
+  pointer-events: none;
+  transition: all 0.15s ease-in-out;
+}
+
+#plus-icon span.is-clicked {
+  transform: rotate(45deg);
+}
+
+ul.node-menu {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: 420px;
+  height: auto;
+  min-height: 400px;
+  padding: 24px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #fff;
+  border: 1px solid #e1e5ea;
+  box-shadow: 0 12px 24px 0px rgb(132 146 166 / 16%);
+  position: fixed;
+  right: 92px;
+  top: 16px;
+  z-index: 9;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: max-content max-content;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.15s ease-in-out;
+}
+
+ul.node-menu.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+ul.node-menu li {
+  border: 2px dashed #e1e5ea;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  font: normal 400 16px/1.5 Helvetica, Arial, sans-serif;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+ul.node-menu li:hover {
+  background-color: #f1f3f5;
+}
+
+/* Override Drawflow Style */
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+.drawflow .drawflow-node {
+  width: 300px;
+  padding: 0;
+  box-sizing: border-box;
+  display: block;
+  /* background-color: #F2F5F7; */
+}
+
+.drawflow .drawflow-node.selected {
+  background-color: #ff0;
+}
+
+.drawflow .drawflow-node .input, 
+.drawflow .drawflow-node .output {
+  position: absolute;
+  margin: 0;
+}
+
+.drawflow .drawflow-node .input {
+  left: 0;
+  top: 16px;
+  transform: translateX(-50%);
+  background-color: #fff;
+}
+
+.drawflow .drawflow-node .output {
+  right: 0;
+  top: auto;
+  bottom: 16px;
+  transform: translateX(50%);
+}
+
+.card {
+  font: normal 400 16px/1.5 Helvetica, Arial, sans-serif;
+}
+
+.card__header {
+  padding: 16px;
+  border-bottom: 2px solid #000;
+  display: flex;
+  align-items: center;
+}
+
+.card__header-icon {
+  width: 32px;
+  height: 32px;
+  background-color: #0084FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+.card__header-title {
+  font-size: 20px;
+  /* text-transform: uppercase;
+  letter-spacing: 1px; */
+}
+
+.card__body {
+  padding: 16px;
+}
+
+.button {
+  border: 2px dashed #000;
+  width: 100%;
+  min-height: 40px;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  line-height: 1.5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;  
+}
+
+/* .button--outline-big {
+  min-height: 80px;
+} */
+
+.edit-aside {
+  width: 300px;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: 2px 0 8px rgba(0,0,0,.2);
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: all 0.15s ease-in-out;
+  transform: translateX(-100%);
+  z-index: 9;
+  padding: 16px;
+  box-sizing: border-box;
+  font: normal 16px/1.5 Helvetica, Arial, sans-serif;  
+}
+
+.edit-aside.is-visible {
+  transform: translateX(0);
+}
+
+.drawflow-delete {
+  font-size: 20px;
+}
